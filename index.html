@@ -63,10 +63,15 @@
     <script>
         let tg = window.Telegram.WebApp;
         let sumbit = document.getElementById("submit");
-
+        tg.expand();
         sumbit.addEventListener("click", ()=> {
             document.getElementById("form").style.display ="block";
             document.getElementById("name").value = tg.initDataUnsafe.user.first_name
+            let search = document.getElementById("name").value
+            let data = {
+                name: search
+            }
+            tg.sendData(JSON.stringify(data))
         });
     </script>
     <script src="" async defer></script>
