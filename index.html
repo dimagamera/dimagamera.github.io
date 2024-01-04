@@ -59,6 +59,16 @@
         <input type="text" placeholder='texting' id="name">
         <button id="submit">Шукати</button>
     </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let sumbit = document.getElementById("submit");
+
+        sumbit.addEventListener("click", ()=> {
+            document.getElementById("form").style.display ="block";
+            document.getElementById("name").value = tg.initDataUnsafe.user.first_name
+        });
+    </script>
     <script src="" async defer></script>
 </body>
 </html>
